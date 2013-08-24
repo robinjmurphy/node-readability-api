@@ -34,6 +34,8 @@ readability.configure({
 
 #### Reader API
 
+To use the Reader API, create a Reader object using an OAuth token and token secret
+
 ```javascript
 var reader = new readability.reader({
   access_token: 'some_access_token',
