@@ -8,3 +8,4 @@ test.js
 coverage.html
 lib-cov
 jsdoc.json
+Makefile
