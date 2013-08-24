@@ -7,11 +7,11 @@
     "test": "make test"
   },
   "devDependencies": {
-    "mocha": "1.x"
+    "mocha": "1.x",
+    "nock": "0.x"
   },
   "dependencies": {
     "request": "2.x",
-    "nock": "0.x",
     "underscore": "1.x"
   },
   "repository": "",
