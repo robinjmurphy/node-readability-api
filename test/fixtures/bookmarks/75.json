@@ -1,0 +1,28 @@
+{
+    "user_id": 1,
+    "read_percent": "0.13",
+    "date_updated": "2010-10-12 11:04:46",
+    "favorite": false,
+    "article": {
+        "domain": "www.newyorker.com",
+        "title": "Booted",
+        "url": "http://www.newyorker.com/arts/critics/atlarge/2011/04/11/110411crat_atlarge_parks?currentPage=all",
+        "lead_image_url": "http://www.newyorker.com/images/2011/04/11/p233/110411_r20743_p233.jpg",
+        "author": "Tim Parks",
+        "excerpt": "Italian voters used to be charmed by Berlusconi&#x2019;s libertine ways. Anniversaries are uplifting when you have something to &hellip;",
+        "direction": "ltr",
+        "word_count": 4291,
+        "date_published": "2011-04-11 00:00:00",
+        "dek": "What really ails Italy?",
+        "processed": true,
+        "id": "47g6s8e7"
+    },
+    "id": 75,
+    "date_archived": null,
+    "date_opened": null,
+    "date_added": "2010-10-12 11:04:46",
+    "article_href": "/api/rest/v1/articles/86/",
+    "date_favorited": null,
+    "archive": false,
+    "tags": [{"text": "w3", "id": 123}, {"text": "web", "id": 456}]
+}

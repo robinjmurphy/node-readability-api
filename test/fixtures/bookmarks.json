@@ -1,0 +1,84 @@
+{
+    "conditions": {
+        "opened_since": null,
+        "added_until": null,
+        "opened_until": null,
+        "archived_until": null,
+        "favorite": null,
+        "archived_since": null,
+        "favorited_since": null,
+        "user": "jdoe",
+        "per_page": 2,
+        "favorited_until": null,
+        "archive": null,
+        "added_since": null,
+        "order": "-date_added",
+        "page": 1,
+        "updated_since": null,
+        "updated_until": null
+    },
+    "meta": {
+        "num_pages": 38,
+        "page": 1,
+        "item_count_total": 76,
+        "item_count": 2
+    },
+    "bookmarks": [
+        {
+            "user_id": 1,
+            "read_percent": "0.0",
+            "date_updated": "2010-10-12 11:38:39",
+            "favorite": false,
+            "article": {
+                "domain": "adobe.com",
+                "excerpt": "This is an excerpt of the article text, 200 chars or less&hellip;",
+                "word_count": 3482,
+                "processed": true,
+                "id": 87,
+                "title": "A brief overview of the Spark architecture and component set",
+                "lead_image_url": "http://www.adobe.com/images/2011/04/11/p233/110411_r20743_p233.jpg",
+                "author": "John Smith",
+                "direction": "ltr",
+                "date_published": "2011-04-11 00:00:00",
+                "dek": null,
+                "url": "http://www.adobe.com/devnet/flex/articles/flex4_sparkintro.html"
+            },
+            "id": 76,
+            "date_archived": null,
+            "date_opened": null,
+            "date_added": "2010-10-12 11:38:29",
+            "article_href": "/api/rest/v1/articles/87/",
+            "date_favorited": null,
+            "archive": false,
+            "tags": [{"text": "adobe", "id": 123}, {"text": "John Smith", "id": 456}]
+        },
+        {
+            "user_id": 1,
+            "read_percent": "0.13",
+            "date_updated": "2010-10-12 11:04:46",
+            "favorite": false,
+            "article": {
+                "domain": "w3.org",
+                "excerpt": "This is an excerpt of the article text, 200 chars or less&hellip;",
+                "word_count": 3482,
+                "processed": true,
+                "id": 86,
+                "title": "Web Application Description Language",
+                "lead_image_url": null,
+                "author": null,
+                "direction": "ltr",
+                "date_published": null,
+                "dek": null,
+                "url": "http://www.w3.org/Submission/wadl/"
+            },
+            "id": 75,
+            "date_archived": null,
+            "date_opened": null,
+            "date_added": "2010-10-12 11:04:46",
+            "article_href": "/api/rest/v1/articles/86/",
+            "date_favorited": null,
+            "archive": false,
+            "tags": []
+        }
+    ]
+}
