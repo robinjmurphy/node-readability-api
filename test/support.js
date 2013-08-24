@@ -16,10 +16,12 @@ module.exports.initializeMocking = function () {
   this.mockReaderAPIResponse('GET', '/users/_current', '/users/_current', 200);
   this.mockReaderAPIResponse('GET', '/bookmarks', '/bookmarks', 200);
   this.mockReaderAPIResponse('GET', '/bookmarks/75', '/bookmarks/75', 200);
-  this.mockReaderAPIResponse('POST', '/bookmarks', '/bookmarks/75', 200);
+  this.mockReaderAPIResponse('POST', '/bookmarks', '/bookmarks/75', 202);
   this.mockReaderAPIResponse('POST', '/bookmarks/75', '/bookmarks/75', 200);
   this.mockReaderAPIResponse('GET', '/tags', '/tags', 200);
   this.mockReaderAPIResponse('GET', '/bookmarks/75/tags', '/bookmarks/75/tags', 200);
   this.mockReaderAPIResponse('POST', '/bookmarks/75/tags', '/bookmarks/75/tags', 200);
   this.mockReaderAPIResponse('GET', '/articles/47g6s8e7', '/articles/47g6s8e7', 200);
+  this.mockReaderAPIResponse('DELETE', '/bookmarks/75/tags/123', '/empty', 204);
+  this.mockReaderAPIResponse('DELETE', '/bookmarks/75', '/empty', 204);
 };

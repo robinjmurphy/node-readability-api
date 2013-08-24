@@ -75,8 +75,24 @@ describe('Reader client', function () {
       });
     });
 
+    it('can unarchive a bookmark', function (done) {
+      var bookmark = reader.unarchiveBookmark('75', function (err, bookmark) {
+        assert.equal(err, null);
+        assert.equal(bookmark.id, '75');
+        done();
+      });
+    });
+
     it('can favourite a bookmark', function (done) {
       var bookmark = reader.favouriteBookmark('75', function (err, bookmark) {
+        assert.equal(err, null);
+        assert.equal(bookmark.id, '75');
+        done();
+      });
+    });
+
+    it('can unfavourite a bookmark', function (done) {
+      var bookmark = reader.unfavouriteBookmark('75', function (err, bookmark) {
         assert.equal(err, null);
         assert.equal(bookmark.id, '75');
         done();
@@ -112,6 +128,15 @@ describe('Reader client', function () {
         function (err, tags) {
           assert.equal(err, null);
           assert.equal(tags.length, 4);
+          done();
+        });
+    });
+
+    it('can remove a tag from a bookmark', function (done) {
+      var bookmark = reader.removeTag('75', '123',
+        function (err, success) {
+          assert.equal(err, null);
+          assert.ok(success);
           done();
         });
     });
