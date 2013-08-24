@@ -72,6 +72,11 @@ reader.addBookmark('http://some.bookmark.url.com/article.html', function (err, b
    //... 
 });
 
+// Remove a bookmark - success is a boolean
+reader.addBookmark('some_bookmark_id', function (err, success) {
+   //... 
+});
+
 // Archive a bookmark - returns the archived bookmark
 reader.archiveBookmark('some_bookmark_id', function (err, bookmark) {
    //... 
