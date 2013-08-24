@@ -28,9 +28,20 @@ describe('Reader client', function () {
   describe('User', function () {
 
     it('can get information about the current user', function (done) {
-      var user = reader.user(function (err, user) {
+      reader.user(function (err, user) {
         assert.equal(err, null);
         assert.equal(user.username, 'jdoe');
+        done();
+      });
+    });
+
+    it('returns an error when the user is not authenticated', function (done) {
+      support.resetMocks();
+      support.mockWithContent('GET', '/users/_current', 401, 'Failed to authenticate.');
+
+      reader.user(function (err, user) {
+        assert.equal(user, undefined);
+        assert.equal(err.message, 'HTTP 401: Failed to authenticate.');
         done();
       });
     });
@@ -40,7 +51,7 @@ describe('Reader client', function () {
   describe('Bookmarks', function () {
 
     it('can get all of a user\'s bookmarks', function (done) {
-      var bookmarks = reader.bookmarks({}, function (err, bookmarks) {
+      reader.bookmarks({}, function (err, bookmarks) {
         assert.equal(err, null);
         assert.ok(bookmarks.meta);
         assert.ok(bookmarks.bookmarks);
@@ -51,7 +62,7 @@ describe('Reader client', function () {
     });
 
     it('can get a single bookmark by ID', function (done) {
-      var bookmark = reader.bookmark('75', function (err, bookmark) {
+      reader.bookmark('75', function (err, bookmark) {
         assert.equal(err, null);
         assert.equal(bookmark.id, '75');
         done();
@@ -59,7 +70,7 @@ describe('Reader client', function () {
     });
 
     it('can add a new bookmark', function (done) {
-      var bookmark = reader.addBookmark(
+      reader.addBookmark(
         'http://some.url.com/article.html', function (err, bookmark) {
           assert.equal(err, null);
           assert.equal(bookmark.id, '75');
@@ -68,7 +79,7 @@ describe('Reader client', function () {
     });
 
     it('can archive a bookmark', function (done) {
-      var bookmark = reader.archiveBookmark('75', function (err, bookmark) {
+      reader.archiveBookmark('75', function (err, bookmark) {
         assert.equal(err, null);
         assert.equal(bookmark.id, '75');
         done();
@@ -76,7 +87,7 @@ describe('Reader client', function () {
     });
 
     it('can unarchive a bookmark', function (done) {
-      var bookmark = reader.unarchiveBookmark('75', function (err, bookmark) {
+      reader.unarchiveBookmark('75', function (err, bookmark) {
         assert.equal(err, null);
         assert.equal(bookmark.id, '75');
         done();
@@ -84,7 +95,7 @@ describe('Reader client', function () {
     });
 
     it('can favourite a bookmark', function (done) {
-      var bookmark = reader.favouriteBookmark('75', function (err, bookmark) {
+      reader.favouriteBookmark('75', function (err, bookmark) {
         assert.equal(err, null);
         assert.equal(bookmark.id, '75');
         done();
@@ -92,7 +103,7 @@ describe('Reader client', function () {
     });
 
     it('can unfavourite a bookmark', function (done) {
-      var bookmark = reader.unfavouriteBookmark('75', function (err, bookmark) {
+      reader.unfavouriteBookmark('75', function (err, bookmark) {
         assert.equal(err, null);
         assert.equal(bookmark.id, '75');
         done();
@@ -108,7 +119,7 @@ describe('Reader client', function () {
   describe('Tags', function () {
 
     it('can get all of the tags for the current user', function (done) {
-      var tags = reader.userTags(function (err, tags) {
+      reader.userTags(function (err, tags) {
         assert.equal(err, null);
         assert.equal(tags.length, 4);
         done();
@@ -116,7 +127,7 @@ describe('Reader client', function () {
     });
 
     it('can get the tags for a bookmark', function (done) {
-      var tags = reader.tags('75', function (err, tags) {
+      reader.tags('75', function (err, tags) {
         assert.equal(err, null);
         assert.equal(tags.length, 4);
         done();
@@ -124,7 +135,7 @@ describe('Reader client', function () {
     });
 
     it('can add a tag to a bookmark', function (done) {
-      var bookmark = reader.addTags('75', ['tag1', 'tag2', 'tag3'],
+      reader.addTags('75', ['tag1', 'tag2', 'tag3'],
         function (err, tags) {
           assert.equal(err, null);
           assert.equal(tags.length, 4);
@@ -133,7 +144,7 @@ describe('Reader client', function () {
     });
 
     it('can remove a tag from a bookmark', function (done) {
-      var bookmark = reader.removeTag('75', '123',
+      reader.removeTag('75', '123',
         function (err, success) {
           assert.equal(err, null);
           assert.ok(success);
@@ -146,7 +157,7 @@ describe('Reader client', function () {
   describe('Articles', function () {
 
     it('can get an article by its ID', function (done) {
-      var article = reader.article('47g6s8e7', function (err, article) {
+      reader.article('47g6s8e7', function (err, article) {
         assert.equal(err, null);
         assert.equal(article.id, '47g6s8e7');
         done();
