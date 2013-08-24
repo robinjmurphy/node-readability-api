@@ -1,5 +1,7 @@
 ## node-readability-client
 
+[![Build Status](https://travis-ci.org/robinjmurphy/node-readability-api.png?branch=master)](https://travis-ci.org/robinjmurphy/node-readability-api)
+
 This is Node client for the [Readability](http://www.readability.com/) API. It currently supports the [Reader API](http://www.readability.com/developers/api/reader), with plans to add support for the [Parser API](http://www.readability.com/developers/api/parser) and [Shortener API](http://www.readability.com/developers/api/shortener).
 
 ### Installation
