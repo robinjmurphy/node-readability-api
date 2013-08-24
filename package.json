@@ -14,7 +14,7 @@
     "request": "2.x",
     "underscore": "1.x"
   },
-  "repository": "",
+  "repository": "https://github.com/robinjmurphy/node-readability-api.git",
   "keywords": [
     "readability"
   ],
