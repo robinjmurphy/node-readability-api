@@ -73,7 +73,7 @@ reader.addBookmark('http://some.bookmark.url.com/article.html', function (err, b
 });
 
 // Remove a bookmark - success is a boolean
-reader.addBookmark('some_bookmark_id', function (err, success) {
+reader.removeBookmark('some_bookmark_id', function (err, success) {
    //... 
 });
 
