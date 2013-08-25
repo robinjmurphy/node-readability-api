@@ -7,7 +7,7 @@ This is Node client for the [Readability](http://www.readability.com/) API. It c
 ### Installation
 
 ```bash
-npm install readability-client
+npm install readability-api
 ```
 
 Or, in your package.json
@@ -15,7 +15,7 @@ Or, in your package.json
 ```json
 {
     "dependencies": {
-        "readability-client": "0.x"
+        "readability-api": "0.x"
     }
 }
 ```
