@@ -1,10 +1,11 @@
 var nock = require('nock');
 var BASE_URL = 'https://www.readability.com/api/rest/v1';
+var readability = require('..');
 
 function intercept(api_path, method) {
   var scope = nock(BASE_URL)
       .filteringPath(function (path) {
-        if (path.match(new RegExp(api_path + '$'))) {
+        if (path.split('?')[0].match(new RegExp(api_path + '$'))) {
           return api_path;
         }
       })
@@ -27,4 +28,12 @@ module.exports.mockWithContent = function (method, api_path, statusCode, content
 
 module.exports.resetMocks = function () {
   nock.cleanAll();
+};
+
+module.exports.configureClient = function () {
+  readability.configure({
+    consumer_key: 'some_consumer_key',
+    consumer_secret: 'some_consumer_secret',
+    parser_token: 'some_parser_token'
+  });
 };

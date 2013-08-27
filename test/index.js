@@ -1,15 +1,31 @@
 var assert = require('assert');
 
-describe('readability-api', function () {
+describe('readability', function () {
   
   var readability = require('../index');
 
-  it('has a reader function', function () {
-    assert.ok('reader' in readability);
+  describe('.reader()', function () {
+    it('should expose the reader constructor', function () {
+      var reader = require('../lib/reader');
+     
+      assert.equal(readability.reader, reader);
+    });
   });
 
-  it('has a configure function', function () {
-    assert.ok('configure' in readability);
+  describe('.configure()', function () {
+    it('should expose the config.set method', function () {
+      var config = require('../lib/config');
+     
+      assert.equal(readability.configure, config.set);
+    });
+  });
+
+  describe('.xauth()', function () {
+    it('should expose the auth.xauth method', function () {
+      var auth = require('../lib/auth');
+     
+      assert.equal(readability.xauth, auth.xauth);
+    });
   });
 
 });
