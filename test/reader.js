@@ -17,9 +17,11 @@ describe('reader', function () {
     });
   });
 
-  it('should throw an exception if instantiated without an access token and key', function () {
-    assert.throws(function () {
-      var reader = new Reader();
+  describe('when instantiated without an access token and secret', function () {
+    it('should throw an exception', function () {
+      assert.throws(function () {
+        var reader = new Reader();
+      });
     });
   });
 
@@ -54,6 +56,18 @@ describe('reader', function () {
         reader.user(function (err, user) {
           assert.equal(user, undefined);
           assert.equal(err.message, 'HTTP 500: Server error.');
+          done();
+        });
+      });
+    });
+
+    describe('when a set of developer keys hasn\'t been configured', function () {
+      it('should return an error', function (done) {
+        config.set({});
+
+        reader.user(function (err, user) {
+          assert.equal(err.message, 'The Readability API must be configured with a developer key and secret before it can be used');
+          assert.equal(user, null);
           done();
         });
       });
