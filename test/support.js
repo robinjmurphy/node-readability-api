@@ -1,5 +1,5 @@
 var nock = require('nock');
-var BASE_URL = 'https://www.readability.com/api/rest/v1';
+var BASE_URL = 'https://www.readability.com/api';
 var readability = require('..');
 
 function intercept(api_path, method) {

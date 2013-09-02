@@ -12,6 +12,14 @@ describe('readability', function () {
     });
   });
 
+  describe('.parser()', function () {
+    it('should expose the parser constructor', function () {
+      var parser = require('../lib/parser');
+
+      assert.equal(readability.parser, parser);
+    });
+  });
+
   describe('.configure()', function () {
     it('should expose the config.set method', function () {
       var config = require('../lib/config');

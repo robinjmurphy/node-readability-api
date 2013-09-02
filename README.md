@@ -141,3 +141,16 @@ reader.article('some_article_id', function (err, article) {
    //... 
 });
 ```
+
+#### Parser API
+
+```javascript
+// Create a parser object
+var parser = new readability.parser();
+
+// Parse an article
+parser.parse('http://some.bookmark.url.com/article.html', function (err, parsed) {
+  //...
+});
+```
+
