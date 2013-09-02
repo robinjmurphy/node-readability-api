@@ -152,5 +152,10 @@ var parser = new readability.parser();
 parser.parse('http://some.bookmark.url.com/article.html', function (err, parsed) {
   //...
 });
+
+// Get the Parser confidence level - returns a number between 0 and 1
+parser.confidence('http://some.bookmark.url.com/article.html', function (err, confidence) {
+  //...
+});
 ```
 
