@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/robinjmurphy/node-readability-api.png?branch=master)](https://travis-ci.org/robinjmurphy/node-readability-api)
 
-This is a Node client for the [Readability](http://www.readability.com/) API. It currently supports the [Reader API](http://www.readability.com/developers/api/reader), with plans to add support for the [Parser API](http://www.readability.com/developers/api/parser) and [Shortener API](http://www.readability.com/developers/api/shortener).
+This is a Node client for the [Readability](http://www.readability.com/) API. It currently supports the [Reader API](http://www.readability.com/developers/api/reader) and [Parser API](http://www.readability.com/developers/api/parser), with plans to add support for the [Shortener API](http://www.readability.com/developers/api/shortener).
 
 ### Installation
 
@@ -39,7 +39,7 @@ readability.configure({
 Retrieve an OAuth access token and access token secret for a user
 
 ```javascript
-readability.xauth('some_username', 'some_password', function(err, tokens) {
+readability.xauth('some_username', 'some_password', function (err, tokens) {
   // Use tokens.oauth_token and tokens.oauth_token_secret when creating a Reader API client
 })
 ``` 
