@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/robinjmurphy/node-readability-api.png?branch=master)](https://travis-ci.org/robinjmurphy/node-readability-api)
 
-This is a Node client for the [Readability](http://www.readability.com/) API. It currently supports the [Reader API](http://www.readability.com/developers/api/reader), with plans to add support for the [Parser API](http://www.readability.com/developers/api/parser) and [Shortener API](http://www.readability.com/developers/api/shortener).
+This is a Node client for the [Readability](http://www.readability.com/) API. It currently supports the [Reader API](http://www.readability.com/developers/api/reader) and [Parser API](http://www.readability.com/developers/api/parser), with plans to add support for the [Shortener API](http://www.readability.com/developers/api/shortener).
 
 ### Installation
 
@@ -39,7 +39,7 @@ readability.configure({
 Retrieve an OAuth access token and access token secret for a user
 
 ```javascript
-readability.xauth('some_username', 'some_password', function(err, tokens) {
+readability.xauth('some_username', 'some_password', function (err, tokens) {
   // Use tokens.oauth_token and tokens.oauth_token_secret when creating a Reader API client
 })
 ``` 
@@ -73,7 +73,7 @@ reader.bookmarks(options, function (err, bookmarks) {
 });
 
 // Get a bookmark by its id
-reader.bookmark('some_bookmark_id', function (err, bookmark)) {
+reader.bookmark('some_bookmark_id', function (err, bookmark) {
    //... 
 });
 
@@ -123,9 +123,9 @@ reader.tags('some_bookmark_id', function (err, tags) {
 });
 
 // Add tags to a bookmark - returns an array of tags
-reader.addTags('some_bookmark_id', ['tag1', 'tag2', 'tag3'], function (err, bookmark)) {
+reader.addTags('some_bookmark_id', ['tag1', 'tag2', 'tag3'], function (err, bookmark) {
     //...
-}
+});
 
 // Remove a tag from a bookmark - returns the bookmark
 reader.removeTag('some_bookmark_id', 'some_tag_id', function (err, bookmark) {
@@ -141,3 +141,21 @@ reader.article('some_article_id', function (err, article) {
    //... 
 });
 ```
+
+#### Parser API
+
+```javascript
+// Create a parser object
+var parser = new readability.parser();
+
+// Parse an article
+parser.parse('http://some.bookmark.url.com/article.html', function (err, parsed) {
+  //...
+});
+
+// Get the Parser confidence level - returns a number between 0 and 1
+parser.confidence('http://some.bookmark.url.com/article.html', function (err, confidence) {
+  //...
+});
+```
+
