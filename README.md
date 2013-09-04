@@ -73,7 +73,7 @@ reader.bookmarks(options, function (err, bookmarks) {
 });
 
 // Get a bookmark by its id
-reader.bookmark('some_bookmark_id', function (err, bookmark)) {
+reader.bookmark('some_bookmark_id', function (err, bookmark) {
    //... 
 });
 
@@ -123,9 +123,9 @@ reader.tags('some_bookmark_id', function (err, tags) {
 });
 
 // Add tags to a bookmark - returns an array of tags
-reader.addTags('some_bookmark_id', ['tag1', 'tag2', 'tag3'], function (err, bookmark)) {
+reader.addTags('some_bookmark_id', ['tag1', 'tag2', 'tag3'], function (err, bookmark) {
     //...
-}
+});
 
 // Remove a tag from a bookmark - returns the bookmark
 reader.removeTag('some_bookmark_id', 'some_tag_id', function (err, bookmark) {
