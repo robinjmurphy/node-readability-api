@@ -1,0 +1,7 @@
+{
+  "node": true,
+  "curly": false,
+  "indent": 2,
+  "strict": false,
+  "unused": false
+}
