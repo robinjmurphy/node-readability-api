@@ -36,4 +36,12 @@ describe('readability', function () {
     });
   });
 
+  describe('.shortener()', function () {
+    it('should expose the shortener constructor', function () {
+      var shortener = require('../lib/shortener');
+     
+      assert.equal(readability.shortener, shortener);
+    });
+  });
+
 });

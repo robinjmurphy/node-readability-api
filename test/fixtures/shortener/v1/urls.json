@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "url": "/api/shortener/v1/urls/y6twed6d",
+    "rdd_url": "http://rdd.me/y6twed6d",
+    "id": "y6twed6d"
+  },
+  "messages": [
+    "URL shortened."
+  ],
+  "success": true
+}
