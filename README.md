@@ -165,7 +165,7 @@ parser.confidence('http://some.bookmark.url.com/article.html', function (err, co
 // Create a shortener object
 var shortener = new readability.shortener()
 
-// Create a short URL - returns the short URL as a string and the full API response data
+// Create a short URL - returns the short URL as a string and additional URL data
 shortener.shorten('http://www.example.com/article.html', function(err, shortUrl, data) {
   //...
 });

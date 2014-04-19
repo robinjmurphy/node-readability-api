@@ -16,9 +16,10 @@ describe('shortener', function () {
     it('should return a short URL', function (done) {
       support.mockWithFile('POST', '/shortener/v1/urls', 202);
 
-      shortener.shorten('http://www.example.com/article.html', function (err, shortUrl) {
+      shortener.shorten('http://www.example.com/article.html', function (err, shortUrl, data) {
         assert.equal(err, null);
         assert.equal(shortUrl, "http://rdd.me/y6twed6d");
+        assert.equal(data.id, 'y6twed6d');
         done();
       });
     });
