@@ -159,3 +159,14 @@ parser.confidence('http://some.bookmark.url.com/article.html', function (err, co
 });
 ```
 
+#### Shortener API
+
+```javascript
+var shortener = new readability.shortener()
+
+// Get a short URL - returns the short URL as a string and the full API response data
+shortener.shorten('http://www.example.com/article.html', function(err, shortUrl, data) {
+  //...
+});
+```
+
