@@ -1,0 +1,5 @@
+{
+  "errorCode": 500,
+  "message": "Readability encountered a server error. We should have been made aware of this issue automatically. If this continues, please contact us at contact@readability.com and let us know under what conditions you're receiving this error.",
+  "error": true
+}

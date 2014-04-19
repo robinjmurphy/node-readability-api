@@ -1,8 +1,8 @@
-## node-readability-client
+## node-readability-api
 
 [![Build Status](https://travis-ci.org/robinjmurphy/node-readability-api.png?branch=master)](https://travis-ci.org/robinjmurphy/node-readability-api) [![Code Climate](https://codeclimate.com/github/robinjmurphy/node-readability-api.png)](https://codeclimate.com/github/robinjmurphy/node-readability-api)
 
-This is a Node client for the [Readability](http://www.readability.com/) API. It currently supports the [Reader API](http://www.readability.com/developers/api/reader), [Parser API](http://www.readability.com/developers/api/parser) and [Shortener API](http://www.readability.com/developers/api/shortener).
+This is a Node client for the [Readability](http://www.readability.com/) API. It supports the [Reader API](http://www.readability.com/developers/api/reader), [Parser API](http://www.readability.com/developers/api/parser) and [Shortener API](http://www.readability.com/developers/api/shortener).
 
 ### Installation
 
@@ -162,11 +162,16 @@ parser.confidence('http://some.bookmark.url.com/article.html', function (err, co
 #### Shortener API
 
 ```javascript
+// Create a shortener object
 var shortener = new readability.shortener()
 
-// Get a short URL - returns the short URL as a string and the full API response data
+// Create a short URL - returns the short URL as a string and the full API response data
 shortener.shorten('http://www.example.com/article.html', function(err, shortUrl, data) {
   //...
 });
-```
 
+// Get information about a short URL
+shortener.url('some_url_id', function(err, url) {
+  //...
+});
+```

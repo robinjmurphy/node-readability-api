@@ -35,4 +35,27 @@ describe('shortener', function () {
       });
     });
   });
+
+  describe('.url()', function () {
+    it('returns information about a short URL', function (done) {
+      support.mockWithFile('GET', '/shortener/v1/urls/y6twed6d', 200);
+
+      shortener.url('y6twed6d', function (err, url) {
+        assert.equal(err, null);
+        assert.equal(url.rdd_url, 'http://rdd.me/y6twed6d');
+        done();
+      });
+    });
+
+    describe('when the Shortener API returns an error', function () {
+      it('returns an error', function (done) {
+        support.mockWithFile('GET', '/shortener/v1/urls/some_id', 500);
+
+        shortener.url('some_id', function (err, url) {
+          assert.equal(err.message, "HTTP 500: Readability encountered a server error. We should have been made aware of this issue automatically. If this continues, please contact us at contact@readability.com and let us know under what conditions you're receiving this error.")
+          done();
+        });
+      });
+    });
+  });
 });
