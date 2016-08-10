@@ -1,6 +1,6 @@
 ## node-readability-api
 
-[![Build Status](https://travis-ci.org/robinjmurphy/node-readability-api.png?branch=master)](https://travis-ci.org/robinjmurphy/node-readability-api) [![Code Climate](https://codeclimate.com/github/robinjmurphy/node-readability-api.png)](https://codeclimate.com/github/robinjmurphy/node-readability-api)
+[![Build Status](https://travis-ci.org/robinjmurphy/node-readability-api.svg?branch=master)](https://travis-ci.org/robinjmurphy/node-readability-api) [![Code Climate](https://codeclimate.com/github/robinjmurphy/node-readability-api/badges/gpa.svg)](https://codeclimate.com/github/robinjmurphy/node-readability-api)
 
 This is a Node client for the [Readability](http://www.readability.com/) API. It supports the [Reader API](http://www.readability.com/developers/api/reader), [Parser API](http://www.readability.com/developers/api/parser) and [Shortener API](http://www.readability.com/developers/api/shortener).
 
