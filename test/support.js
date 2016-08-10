@@ -4,11 +4,7 @@ var readability = require('..');
 
 function intercept(api_path, method) {
   var scope = nock(BASE_URL)
-      .filteringPath(function (path) {
-        if (path.split('?')[0].match(new RegExp(api_path + '$'))) {
-          return api_path;
-        }
-      })
+      .filteringPath(/\?.*/, '')
       .intercept(api_path, method);
 
   return scope;
@@ -27,6 +23,7 @@ module.exports.mockWithContent = function (method, api_path, statusCode, content
 };
 
 module.exports.resetMocks = function () {
+  nock.disableNetConnect();
   nock.cleanAll();
 };
 

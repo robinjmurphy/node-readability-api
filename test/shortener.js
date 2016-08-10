@@ -53,7 +53,7 @@ describe('shortener', function () {
         support.mockWithFile('GET', '/shortener/v1/urls/some_id', 500);
 
         shortener.url('some_id', function (err, url) {
-          assert.equal(err.message, "HTTP 500: Readability encountered a server error. We should have been made aware of this issue automatically. If this continues, please contact us at contact@readability.com and let us know under what conditions you're receiving this error.")
+          assert.equal(err.message, "HTTP 500: Readability encountered a server error. We should have been made aware of this issue automatically. If this continues, please contact us at contact@readability.com and let us know under what conditions you're receiving this error.");
           done();
         });
       });

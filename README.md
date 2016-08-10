@@ -7,17 +7,7 @@ This is a Node client for the [Readability](http://www.readability.com/) API. It
 ### Installation
 
 ```bash
-npm install readability-api
-```
-
-Or, in your package.json
-
-```json
-{
-    "dependencies": {
-        "readability-api": "0.x"
-    }
-}
+npm install --save readability-api
 ```
 
 ### Usage
@@ -42,7 +32,7 @@ Retrieve an OAuth access token and access token secret for a user
 readability.xauth('some_username', 'some_password', function (err, tokens) {
   // Use tokens.oauth_token and tokens.oauth_token_secret when creating a Reader API client
 })
-``` 
+```
 
 #### Reader API
 
@@ -69,42 +59,42 @@ reader.user(function (err, user) {
 ```javascript
 // Get all bookmarks - response contains both metadata (pagination etc.) and an array of bookmarks
 reader.bookmarks(options, function (err, bookmarks) {
-   //... 
+   //...
 });
 
 // Get a bookmark by its id
 reader.bookmark('some_bookmark_id', function (err, bookmark) {
-   //... 
+   //...
 });
 
 // Add a bookmark - returns the created bookmark
 reader.addBookmark('http://some.bookmark.url.com/article.html', function (err, bookmark) {
-   //... 
+   //...
 });
 
 // Remove a bookmark - success is a boolean
 reader.removeBookmark('some_bookmark_id', function (err, success) {
-   //... 
+   //...
 });
 
 // Archive a bookmark - returns the archived bookmark
 reader.archiveBookmark('some_bookmark_id', function (err, bookmark) {
-   //... 
+   //...
 });
 
 // Unarchive a bookmark - returns the bookmark
 reader.unarchiveBookmark('some_bookmark_id', function (err, bookmark) {
-   //... 
+   //...
 });
 
 // Favourite a bookmark - returns the favourited bookmark
 reader.favouriteBookmark('some_bookmark_id', function (err, bookmark) {
-   //... 
+   //...
 });
 
 // Unavourite a bookmark - returns the bookmark
 reader.unfavouriteBookmark('some_bookmark_id', function (err, bookmark) {
-   //... 
+   //...
 });
 
 ```
@@ -114,12 +104,12 @@ reader.unfavouriteBookmark('some_bookmark_id', function (err, bookmark) {
 ```javascript
 // Get all of the current user's tags - returns an array of tags
 reader.userTags(function (err, tags) {
-   //... 
+   //...
 });
 
 // Get all of the tags for a bookmark - returns an array of tags
 reader.tags('some_bookmark_id', function (err, tags) {
-   //... 
+   //...
 });
 
 // Add tags to a bookmark - returns an array of tags
@@ -129,7 +119,7 @@ reader.addTags('some_bookmark_id', ['tag1', 'tag2', 'tag3'], function (err, book
 
 // Remove a tag from a bookmark - returns the bookmark
 reader.removeTag('some_bookmark_id', 'some_tag_id', function (err, bookmark) {
-   //... 
+   //...
 });
 ```
 
@@ -138,7 +128,7 @@ reader.removeTag('some_bookmark_id', 'some_tag_id', function (err, bookmark) {
 ```javascript
 // Get a single article
 reader.article('some_article_id', function (err, article) {
-   //... 
+   //...
 });
 ```
 

@@ -20,7 +20,7 @@ describe('parser', function () {
       parser.parse('http://some.url/article.html', function (err, parsed) {
         assert.equal(err, null);
         assert.equal(parsed.author, "Rafi Kohan");
-        assert.equal(parsed.content, "<div class=\"article-text\">\n<p>I'm idling outside Diamante's, [snip] ...</p></div>")
+        assert.equal(parsed.content, "<div class=\"article-text\">\n<p>I'm idling outside Diamante's, [snip] ...</p></div>");
         done();
       });
     });

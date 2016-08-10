@@ -4,15 +4,18 @@
   "description": "A Node wrapper for the Readability APIs",
   "main": "index.js",
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "lint": "jshint .",
+    "posttest": "npm run lint"
   },
   "devDependencies": {
-    "mocha": "1.x",
-    "nock": "0.x"
+    "jshint": "^2.9.2",
+    "mocha": "^3.0.2",
+    "nock": "^8.0.0"
   },
   "dependencies": {
-    "request": "2.x",
-    "underscore": "1.x"
+    "lodash": "^4.14.2",
+    "request": "^2.74.0"
   },
   "repository": "https://github.com/robinjmurphy/node-readability-api.git",
   "keywords": [
